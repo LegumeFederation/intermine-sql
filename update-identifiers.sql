@@ -2,14 +2,16 @@
 -- General purpose updater for chado identifiers, mostly uniquename munged to primaryIdentifier
 --
 -- RUN ONLY ONCE!!! ENABLE TRIGGERS FIRST!!!
+------------------------------------------------------------------------
+-- CHROMOSOME
+-- glyma.Wm82.a2.Chr01 | glyma.Chr01
 -----------------------------------------------------------------------------------------------
 -- GENE
-------------------------------------------------------------------------
 -- vigun.IT97K-499-35.gnm1.ann1.VigunL000100 | vigun.VigunL000100
 -- Phvul.001G000100.v1.0                     | phavu.Phvul.001G000100
 -- Ca_28103_gene                             | cicar.Ca_28103_gene
 -- cicar.ICC4958.v2.0.Ca_01216               | cicar.ICC4958.Ca_01216
--- Glyma.20G120900.Wm82.a2.v1
+-- Glyma.15G017000.Wm82.a2.v1                | glyma.Glyma.15G017000
 -- Medtr7g117900.JCVIMt4.0v1
 -- Aradu.Y681G
 -- Araip.SUM3W
@@ -21,16 +23,22 @@
 -- vigan.Gyeongwon.v3.Vang05g01450
 -----------------------------------------------------------------------------------------------
 -- PROTEIN
------------------------------------------------------------------------------
 -- vigun.IT97K-499-35.gnm1.ann1.Vigun03g178100.1.p | vigun.Vigun03g178100.1.p
+-- Glyma.19G172200.1.Wm82.a2.v1                    | glyma.Glyma.19G172200.1
 -----------------------------------------------------------------------------
-
+-- EXON
+-- Glyma.10G109600.1.Wm82.a2.v1.exon.1             | glyma.Glyma.10G109600.1.Wm82.a2.v1.exon.1
+-----------------------------------------------------------------------------
+-- mRNA
+-- Glyma.01G092900.1.Wm82.a2.v1 | glyma.Glyma.01G092900.1
+-----------------------------------------------------------------------------
+ 
 
 -- cowpea
 UPDATE gene SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE exon SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryidentifier LIKE 'vigun.%';
-UPDATE protein SET primaryidentifier=replace(primaryidentifier,'.p','') WHERE primaryidentifier LIKE 'vigun.%';
-UPDATE protein SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
+UPDATE protein SET primaryidentifier=replace(secondaryidentifier,'.p',''), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'vigun.%';
+UPDATE protein SET primaryidentifier=substring(primaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE chromosome SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE mrna SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryidentifier LIKE 'vigun.%';
@@ -62,6 +70,10 @@ UPDATE chromosome SET primaryidentifier=replace(primaryidentifier, 'cicar.CDCFro
 
 -- soybean
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, '.Wm82.a2.v1','') WHERE primaryidentifier LIKE 'Glyma.%';
+UPDATE exon SET primaryidentifier=replace(primaryidentifier, '.Wm82.a2.v1','') WHERE primaryidentifier LIKE 'Glyma.%';
+UPDATE mrna SET primaryidentifier=substring(secondaryidentifier,7), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'Glyma.%';
+UPDATE protein SET primaryidentifier=substring(secondaryidentifier,7), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'Glyma.%';
+UPDATE chromosome SET primaryidentifier='Gm'||substring(secondaryidentifier,10), secondaryidentifier=initcap(primaryidentifier) WHERE primaryidentifier LIKE 'glyma.%';
 
 -- medicago
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, '.JCVIMt4.0v1','') WHERE primaryidentifier LIKE 'Medtr%';
