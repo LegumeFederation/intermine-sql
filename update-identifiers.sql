@@ -32,7 +32,9 @@
 -- mRNA
 -- Glyma.01G092900.1.Wm82.a2.v1 | glyma.Glyma.01G092900.1
 -----------------------------------------------------------------------------
- 
+-- QTL
+-- phavu.First flower, bean 1-5 | First flower, bean 1-5
+----------------------------------------------------------------------------- 
 
 -- cowpea
 UPDATE gene SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
@@ -52,6 +54,8 @@ UPDATE chromosome SET primaryidentifier=secondaryidentifier WHERE primaryidentif
 UPDATE supercontig SET primaryidentifier=secondaryidentifier WHERE primaryidentifier LIKE 'phavu.%';
 UPDATE mrna SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'Phvul.%';
 UPDATE transcript SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'Phvul.%';
+UPDATE qtl SET primaryidentifier=secondaryidentifier, secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'phavu.%';
+
 
 -- chickpea desi
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, 'cicar.ICC4958.v2.0', 'ICC4958') WHERE primaryidentifier LIKE 'cicar.%';
