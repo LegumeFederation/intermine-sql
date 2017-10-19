@@ -22,23 +22,23 @@
 -- CHROMOSOME Araip.B01 Araip.B01
 -----------------------------------------------------------------------------------------------
 -- 
--- SUPERCONTIGvigun.IT97K-499-35.gnm1.contig_100 | vigun.contig_100
--- SUPERCONTIGphavu.G19833.v1.scaffold_100       | phavu.scaffold_100
--- SUPERCONTIGcicar.CDCFrontier.v1.C11044140     | cicar.C11044140
--- SUPERCONTIGcicar.ICC4958.v2.contig50210       | cicar.contig50210
--- SUPERCONTIGglyma.Wm82.a2.scaffold_1002        | glyma.scaffold_1002
--- SUPERCONTIGmedtr.A17_HM341.v4.scaffold0001    | medtr.scaffold0001
--- SUPERCONTIGvigra.VC1973A.v6.scaffold_100      | vigra.scaffold_100
--- SUPERCONTIGNO lotja
--- SUPERCONTIGcajca.ICPL87119.v1.Scaffold000002  | cajca.Scaffold000002
--- SUPERCONTIGlupan.Tanjil.a1.Scaffold_1000      | lupan.Scaffold_1000
--- SUPERCONTIGtripr.MilvusB.v2.Tp57577_TGAC_v2_scaf_10000 | tripr.Tp57577_TGAC_v2_scaf_10000
--- SUPERCONTIGvigan.Gyeongwon.v3.scaffold_1000   | vigan.scaffold_1000
--- SUPERCONTIGaradu.V14167.v1.Adur101_2          | aradu.Adur101_2
--- SUPERCONTIGaraip.K30076.v1.Aipa1001           | araip.Aipa1001
+-- SUPERCONTIG vigun.IT97K-499-35.gnm1.contig_100 | vigun.contig_100
+-- SUPERCONTIG phavu.G19833.v1.scaffold_100       | phavu.scaffold_100
+-- SUPERCONTIG cicar.CDCFrontier.v1.C11044140     | cicar.C11044140
+-- SUPERCONTIG cicar.ICC4958.v2.contig50210       | cicar.contig50210
+-- SUPERCONTIG glyma.Wm82.a2.scaffold_1002        | glyma.scaffold_1002
+-- SUPERCONTIG medtr.A17_HM341.v4.scaffold0001    | medtr.scaffold0001
+-- SUPERCONTIG vigra.VC1973A.v6.scaffold_100      | vigra.scaffold_100
+-- SUPERCONTIG NO lotja
+-- SUPERCONTIG cajca.ICPL87119.v1.Scaffold000002  | cajca.Scaffold000002
+-- SUPERCONTIG lupan.Tanjil.a1.Scaffold_1000      | lupan.Scaffold_1000
+-- SUPERCONTIG tripr.MilvusB.v2.Tp57577_TGAC_v2_scaf_10000 | tripr.Tp57577_TGAC_v2_scaf_10000
+-- SUPERCONTIG vigan.Gyeongwon.v3.scaffold_1000   | vigan.scaffold_1000
+-- SUPERCONTIG aradu.V14167.v1.Adur101_2          | aradu.Adur101_2
+-- SUPERCONTIG araip.K30076.v1.Aipa1001           | araip.Aipa1001
 -- *peanutbase*
--- SUPERCONTIGAdur2309 | Adur2309
--- SUPERCONTIGAipa1180 | Aipa1180
+-- SUPERCONTIG Adur2309 | Adur2309
+-- SUPERCONTIG Aipa1180 | Aipa1180
 -----------------------------------------------------------------------------------------------
 -- 
 -- GENEvigun.IT97K-499-35.gnm1.ann1.VigunL000100 | vigun.VigunL000100
@@ -174,6 +174,7 @@ UPDATE exon SET primaryidentifier=replace(primaryidentifier, '.Wm82.a2.v1','') W
 UPDATE mrna SET primaryidentifier=substring(secondaryidentifier,7), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'Glyma.%';
 UPDATE protein SET primaryidentifier=substring(secondaryidentifier,7), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'Glyma.%';
 UPDATE chromosome SET primaryidentifier='Gm'||substring(secondaryidentifier,10), secondaryidentifier=initcap(primaryidentifier) WHERE primaryidentifier LIKE 'glyma.%';
+UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'glyma.%';
 
 -- medicago
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, '.JCVIMt4.0v1','') WHERE primaryidentifier LIKE 'Medtr%';
