@@ -185,6 +185,9 @@ UPDATE gene SET primaryidentifier=replace(primaryidentifier, '.JCVIMt4.0v1','') 
 -- A. ipaensis
 -- NO CHANGE
 
+-- A. hypogaea
+UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'arahy.%';
+
 -- others
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, '.Vradi.ver6', '') WHERE primaryidentifier LIKE 'Vradi%';
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, 'lupan.Tanjil.a1.0.', '') WHERE primaryidentifier LIKE 'lupan.%';
