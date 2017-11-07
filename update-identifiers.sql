@@ -2,10 +2,9 @@
 -- General purpose updater for LIS chado identifiers
 --
 -- RUN ONLY ONCE!!! ENABLE TRIGGERS FIRST!!!
-------------------------------------------------------------------------
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- cowpea
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME vigun.IT97K-499-35.gnm1.Vu01    vigun.Vu01
 -- SUPERCONTIG vigun.IT97K-499-35.gnm1.contig_100 | vigun.contig_100
 -- GENE vigun.IT97K-499-35.gnm1.ann1.VigunL000100 | vigun.VigunL000100
@@ -13,7 +12,7 @@
 -- PROTEIN vigun.IT97K-499-35.gnm1.ann1.Vigun03g178100.1.p | vigun.Vigun03g178100.1.p
 -- mRNA vigun.IT97K-499-35.gnm1.ann1.Vigun01g000100.1 | vigun.Vigun01g000100.1
 UPDATE chromosome SET secondaryidentifier=primaryidentifier, primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
-UPDATE gene SET       secondaryidentifier=primaryidentifier, primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
+UPDATE gene SET       primaryidentifier=substring(primaryidentifier,30)                                         WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE exon SET       primaryidentifier=substring(primaryidentifier,30)                                         WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE protein SET    secondaryidentifier=primaryidentifier, primaryidentifier=replace(secondaryidentifier,'.p','') WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE protein SET    primaryidentifier=substring(primaryidentifier,7)                                          WHERE primaryidentifier LIKE 'vigun.%';
@@ -22,6 +21,7 @@ UPDATE mrna SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryi
 UPDATE transcript SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryidentifier LIKE 'vigun.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- common bean
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME phavu.G19833.v1.Chr01           phavu.Chr01
 -- SUPERCONTIG phavu.G19833.v1.scaffold_100       | phavu.scaffold_100
 -- GENE Phvul.001G000100.v1.0                     | phavu.Phvul.001G000100
@@ -39,6 +39,7 @@ UPDATE transcript SET primaryidentifier=substring(secondaryidentifier,7) WHERE p
 UPDATE qtl SET primaryidentifier=secondaryidentifier, secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'phavu.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea desi
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME cicar.ICC4958.v2.Ca_LG_1        cicar.Ca_LG_1
 -- SUPERCONTIG cicar.ICC4958.v2.contig50210       | cicar.contig50210
 -- GENE cicar.ICC4958.v2.0.Ca_01216               | cicar.ICC4958.Ca_01216
@@ -52,6 +53,7 @@ UPDATE mrna SET primaryidentifier=replace(primaryidentifier, 'cicar.ICC4958.v2.0
 UPDATE chromosome SET primaryidentifier=replace(primaryidentifier, 'cicar.ICC4958.v2', 'ICC4958') WHERE primaryidentifier LIKE '%ICC4958%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea kabuli
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME cicar.CDCFrontier.v1.Ca1        cicar.Ca1
 -- SUPERCONTIG cicar.CDCFrontier.v1.C11044140     | cicar.C11044140
 -- GENE Ca_28103_gene                             | cicar.Ca_28103_gene
@@ -66,6 +68,7 @@ UPDATE protein SET primaryidentifier='CDCFrontier.'||primaryidentifier WHERE pri
 UPDATE chromosome SET primaryidentifier=replace(primaryidentifier, 'cicar.CDCFrontier.v1', 'CDCFrontier') WHERE primaryidentifier LIKE '%CDC%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- soybean
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME glyma.Wm82.a2.Chr01             glyma.Chr01
 -- SUPERCONTIG glyma.Wm82.a2.scaffold_1002        | glyma.scaffold_1002
 -- GENE Glyma.15G017000.Wm82.a2.v1                | glyma.Glyma.15G017000
@@ -80,6 +83,7 @@ UPDATE chromosome SET primaryidentifier='Gm'||substring(secondaryidentifier,10),
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'glyma.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- medicago
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME medtr.A17_HM341.v4.chr1         medtr.chr1
 -- SUPERCONTIG medtr.A17_HM341.v4.scaffold0001    | medtr.scaffold0001
 -- GENE Medtr0001s0010.JCVIMt4.0v1                | medtr.Medtr0001s0010
@@ -89,45 +93,44 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7), secon
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, '.JCVIMt4.0v1','') WHERE primaryidentifier LIKE 'Medtr%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- A. duranensis - LIS
--- CHROMOSOME aradu.V14167.v1.Aradu.A01       aradu.Aradu.A01
--- SUPERCONTIG aradu.V14167.v1.Adur101_2          | aradu.Adur101_2
--- GENE Aradu.000JC                               | aradu.Aradu.000JC
--- EXON Aradu.TW3FF:exon:45                                | Aradu.TW3FF:exon:45
--- PROTEIN Aradu.007YB.1                                   | aradu.Aradu.007YB.1
--- mRNA Aradu.000JC.1                                 | aradu.Aradu.000JC.1
--- mRNA Aradu.Z3YP0.1 | Aradu.Z3YP0.1
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- A. duranensis - PeanutBase
--- CHROMOSOME Aradu.A02 Aradu.A02
--- SUPERCONTIG Adur2309 | Adur2309
--- GENE Aradu.B2QWP | Aradu.B2QWP
--- EXON Aradu.B2QWP:exon:0 | Aradu.B2QWP:exon:0
--- PROTEIN Aradu.NYS45.1 | Aradu.NYS45.1
--- LINKAGE GROUP AA_A.duranensis_x_A.duranensis_a-A01    | AA_A.duranensis_x_A.duranensis_a-A01
+-- CHROMOSOME   aradu.V14167.v1.Aradu.A01 | aradu.Aradu.A01
+-- SUPERCONTIG  aradu.V14167.v1.Adur101_2 | aradu.Adur101_2
+-- GENE         Aradu.000JC               | aradu.Aradu.000JC
+-- EXON         Aradu.TW3FF:exon:45       | Aradu.TW3FF:exon:45
+-- PROTEIN      Aradu.007YB.1             | aradu.Aradu.007YB.1
+-- mRNA         Aradu.000JC.1             | aradu.Aradu.000JC.1
+UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'aradu.%';
+UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'aradu.%';
+-- gene is OK
+-- exon is OK
+-- protein is OK
+-- mRNA 9s OK
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- A. ipaensis - LIS
--- CHROMOSOME araip.K30076.v1.Araip.B02       araip.Araip.B02
--- SUPERCONTIG araip.K30076.v1.Aipa1001           | araip.Aipa1001
--- GENE Araip.000WR                               | araip.Araip.000WR
--- EXON Araip.2M1DM:exon:2                                 | Araip.2M1DM:exon:2
--- PROTEIN Araip.002AG.1                                   | araip.Araip.002AG.1
--- mRNA Araip.000WR.1                                 | araip.Araip.000WR.1
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- A. ipaensis - PeanutBase
--- CHROMOSOME Araip.B01 Araip.B01
--- SUPERCONTIG Aipa1180 | Aipa1180
--- GENE Araip.0K3I7 | Araip.0K3I7
--- EXON Araip.03MS6:exon:7 | Araip.03MS6:exon:7
--- PROTEIN Araip.X53VH.1 | Araip.X53VH.1
--- mRNA Araip.J9PKW.1 | Araip.J9PKW.1
+-- CHROMOSOME   araip.K30076.v1.Araip.B02 | araip.Araip.B02
+-- SUPERCONTIG  araip.K30076.v1.Aipa1001  | araip.Aipa1001
+-- GENE         Araip.000WR               | araip.Araip.000WR
+-- EXON         Araip.2M1DM:exon:2        | Araip.2M1DM:exon:2
+-- PROTEIN      Araip.002AG.1             | araip.Araip.002AG.1
+-- mRNA         Araip.000WR.1             | araip.Araip.000WR.1
+UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'araip.%';
+UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'araip.%';
+-- gene is OK
+-- exon is OK
+-- protein is OK
+-- mRNA 9s OK
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- A. hypogaea - PeanutBase
--- QTL arahy.Groundnut bruchid 1-1  | Groundnut bruchid 1-1
--- LINKAGE GROUP TT_AhComposite_QinFeng2012_a-A10(LGJ10) | TT_AhComposite_QinFeng2012_a-A10(LGJ10)
--- GENETIC MARKER 14H06      | 14H06
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- QTL            arahy.Groundnut bruchid 1-1             | Groundnut bruchid 1-1
+-- LINKAGE GROUP  TT_AhComposite_QinFeng2012_a-A10(LGJ10) | TT_AhComposite_QinFeng2012_a-A10(LGJ10)
+-- GENETIC MARKER 14H06                                   | 14H06
 UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'arahy.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- others
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME vigra.VC1973A.v6.Vr01             | vigra.Vr01
 -- SUPERCONTIG vigra.VC1973A.v6.scaffold_100    | vigra.scaffold_100
 -- GENE Vradi0007s00010.Vradi.ver6              | vigra.Vradi0007s00010
