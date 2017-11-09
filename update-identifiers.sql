@@ -3,7 +3,7 @@
 --
 -- RUN ONLY ONCE!!! ENABLE TRIGGERS FIRST!!!
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- V. unguiculata - LIS
+-- cowpea - V. unguiculata - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME vigun.IT97K-499-35.gnm1.Vu01    vigun.Vu01
 -- SUPERCONTIG vigun.IT97K-499-35.gnm1.contig_100 | vigun.contig_100
@@ -19,8 +19,9 @@ UPDATE protein SET    primaryidentifier=substring(primaryidentifier,7)          
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE mrna SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE transcript SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryidentifier LIKE 'vigun.%';
+UPDATE linkagegroup SET number=substring(primaryidentifier,24) WHERE primaryidentifier like 'iSelect%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- P. vulgaris - LIS
+-- common bean - P. vulgaris - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME phavu.G19833.v1.Chr01           phavu.Chr01
 -- SUPERCONTIG phavu.G19833.v1.scaffold_100       | phavu.scaffold_100
@@ -38,7 +39,7 @@ UPDATE mrna SET primaryidentifier=substring(secondaryidentifier,7) WHERE primary
 UPDATE transcript SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'Phvul.%';
 UPDATE qtl SET primaryidentifier=secondaryidentifier, secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'phavu.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- C. arietinum desi - LIS
+-- chickpea desi - C. arietinum desi - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME cicar.ICC4958.v2.Ca_LG_1        cicar.Ca_LG_1
 -- SUPERCONTIG cicar.ICC4958.v2.contig50210       | cicar.contig50210
@@ -52,7 +53,7 @@ UPDATE protein SET primaryidentifier=replace(primaryidentifier, 'cicar.ICC4958.v
 UPDATE mrna SET primaryidentifier=replace(primaryidentifier, 'cicar.ICC4958.v2.0', 'ICC4958') WHERE primaryidentifier LIKE 'cicar.%';
 UPDATE chromosome SET primaryidentifier=replace(primaryidentifier, 'cicar.ICC4958.v2', 'ICC4958') WHERE primaryidentifier LIKE '%ICC4958%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- C. arietinum kabuli - LIS
+-- chickpea kabuli - C. arietinum kabuli - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME cicar.CDCFrontier.v1.Ca1          | cicar.Ca1
 -- SUPERCONTIG cicar.CDCFrontier.v1.C11044140   | cicar.C11044140
@@ -67,7 +68,7 @@ UPDATE mrna SET primaryidentifier='CDCFrontier.'||primaryidentifier WHERE primar
 UPDATE protein SET primaryidentifier='CDCFrontier.'||primaryidentifier WHERE primaryidentifier LIKE 'Ca_%';
 UPDATE chromosome SET primaryidentifier=replace(primaryidentifier, 'cicar.CDCFrontier.v1', 'CDCFrontier') WHERE primaryidentifier LIKE '%CDC%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- G. Max - LIS
+-- soybean - G. max - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME glyma.Wm82.a2.Chr01             glyma.Chr01
 -- SUPERCONTIG glyma.Wm82.a2.scaffold_1002        | glyma.scaffold_1002
@@ -82,7 +83,7 @@ UPDATE protein SET primaryidentifier=substring(secondaryidentifier,7), secondary
 UPDATE chromosome SET primaryidentifier='Gm'||substring(secondaryidentifier,10), secondaryidentifier=initcap(primaryidentifier) WHERE primaryidentifier LIKE 'glyma.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7), secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'glyma.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- M. truncatula - LIS
+-- medicago - M. truncatula - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME medtr.A17_HM341.v4.chr1         medtr.chr1
 -- SUPERCONTIG medtr.A17_HM341.v4.scaffold0001    | medtr.scaffold0001
@@ -92,7 +93,7 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7), secon
 -- mRNA Medtr0001s0010.1.JCVIMt4.0v1                  | medtr.Medtr0001s0010.1
 UPDATE gene SET primaryidentifier=replace(primaryidentifier, '.JCVIMt4.0v1','') WHERE primaryidentifier LIKE 'Medtr%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- A. duranensis - LIS
+-- wild peanut duranensis - A. duranensis - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME   aradu.V14167.v1.Aradu.A01 | aradu.Aradu.A01
 -- SUPERCONTIG  aradu.V14167.v1.Adur101_2 | aradu.Adur101_2
@@ -104,7 +105,7 @@ UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7),second
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'aradu.%';
 -- gene, exon, protein, mRNA OK
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- A. ipaensis - LIS
+-- wild peanut ipaensis - A. ipaensis - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME   araip.K30076.v1.Araip.B02 | araip.Araip.B02
 -- SUPERCONTIG  araip.K30076.v1.Aipa1001  | araip.Aipa1001
@@ -116,7 +117,7 @@ UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7),second
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'araip.%';
 -- gene, exon, protein, mRNA OK
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- A. hypogaea - PeanutBase
+-- cultivated peanut - A. hypogaea - PeanutBase
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- QTL            arahy.Groundnut bruchid 1-1             | Groundnut bruchid 1-1
 -- LINKAGE GROUP  TT_AhComposite_QinFeng2012_a-A10(LGJ10) | TT_AhComposite_QinFeng2012_a-A10(LGJ10)
@@ -124,7 +125,7 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7),second
 UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'arahy.%';
 -- linkage group, genetic marker same
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- L. japonicus - LIS
+-- lotus - L. japonicus - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME   lotja.MG-20.v3.Lj3.0_chr1       | lotja.Lj3.0_chr1
 -- SUPERCONTIG  NONE
@@ -134,7 +135,7 @@ UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primary
 -- mRNA         Lj0g3v0000029.1                 | lotja.Lj0g3v0000029.1
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'lotja.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- V. radiata - LIS
+-- mungbean - V. radiata - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME   vigra.VC1973A.v6.Vr01           | vigra.Vr01
 -- SUPERCONTIG  vigra.VC1973A.v6.scaffold_100   | vigra.scaffold_100
@@ -149,7 +150,7 @@ UPDATE exon        SET primaryidentifier=secondaryidentifier,secondaryidentifier
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'vigra.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'vigra.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- C. cajan - LIS
+-- pigeonpea - C. cajan - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME cajca.ICPL87119.v1.CcLG07         | cajca.CcLG07
 -- SUPERCONTIG cajca.ICPL87119.v1.Scaffold000002| cajca.Scaffold000002
@@ -163,7 +164,7 @@ UPDATE gene        SET primaryidentifier=replace(primaryidentifier, '_gene', '')
 -- exon can't be updated, nothing identifiable
 -- protein, mRNA OK
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- L. angustifolius - LIS
+-- narrow-leafed lupin - L. angustifolius - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME   lupan.Tanjil.a1.NLL-01          | lupan.NLL-01
 -- SUPERCONTIG  lupan.Tanjil.a1.Scaffold_1000   | lupan.Scaffold_1000
@@ -178,7 +179,7 @@ UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7),second
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'lupan.%';
 UPDATE mRNA        SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'lupan.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- T. pratense -- LIS
+-- red clover - T. pratense -- LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME   tripr.MilvusB.v2.Tp57577_TGAC_v2_LG1            | tripr.Tp57577_TGAC_v2_LG1
 -- SUPERCONTIG  tripr.MilvusB.v2.Tp57577_TGAC_v2_scaf_10000     | tripr.Tp57577_TGAC_v2_scaf_10000
@@ -193,7 +194,7 @@ UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7),second
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'tripr.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7),secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'tripr.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- V. angularis - LIS
+-- adzuki bean - V. angularis - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME   vigan.Gyeongwon.v3.1                            | vigan.1
 -- SUPERCONTIG  vigan.Gyeongwon.v3.scaffold_1000                | vigan.scaffold_1000
