@@ -19,7 +19,7 @@ UPDATE protein SET    primaryidentifier=substring(primaryidentifier,7)          
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE mrna SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryidentifier LIKE 'vigun.%';
 UPDATE transcript SET primaryidentifier=substring(primaryidentifier,30) WHERE primaryidentifier LIKE 'vigun.%';
-UPDATE linkagegroup SET number=substring(primaryidentifier,24) WHERE primaryidentifier like 'iSelect%';
+UPDATE linkagegroup SET number=substring(primaryidentifier,24)::integer WHERE primaryidentifier like 'iSelect%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- common bean - P. vulgaris - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
