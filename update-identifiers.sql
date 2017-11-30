@@ -40,14 +40,14 @@ UPDATE qtl         SET primaryidentifier=secondaryidentifier, secondaryidentifie
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea desi - C. arietinum desi - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- CHROMOSOME cicar.ICC4958.v2.Ca_LG_1                          | cicar.Ca_LG_1
--- SUPERCONTIG cicar.ICC4958.v2.contig50210                     | cicar.contig50210
--- GENE cicar.ICC4958.v2.0.Ca_01216                             | cicar.ICC4958.Ca_01216
--- EXON cicar.ICC4958.v2.0.Ca_00001.1.exon1                     | cicar.ICC4958.Ca_00001.1.exon1
--- PROTEIN cicar.ICC4958.v2.0.Ca_00005.1                        | cicar.ICC4958.Ca_00005.1
--- mRNA cicar.ICC4958.v2.0.Ca_00001.1                           | cicar.ICC4958.Ca_00001.1
-UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'cicar.ICC4958.%';
-UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'cicar.ICC4958.%';
+-- CHROMOSOME  cicar.ICC4958.v2.Ca_LG_1                         | cicar.ICC4958.Ca_LG_1
+-- SUPERCONTIG cicar.ICC4958.v2.scaffold19112                   | cicar.ICC4958.scaffold19112
+-- GENE        cicar.ICC4958.v2.0.Ca_01216                      | cicar.ICC4958.Ca_01216
+-- EXON        cicar.ICC4958.v2.0.Ca_00001.1.exon1              | cicar.ICC4958.Ca_00001.1.exon1
+-- PROTEIN     cicar.ICC4958.v2.0.Ca_00005.1                    | cicar.ICC4958.Ca_00005.1
+-- mRNA        cicar.ICC4958.v2.0.Ca_00001.1                    | cicar.ICC4958.Ca_00001.1
+UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
+UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
 UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
@@ -55,18 +55,17 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea kabuli - C. arietinum kabuli - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- CHROMOSOME cicar.CDCFrontier.v1.Ca1                          | cicar.Ca1
--- SUPERCONTIG cicar.CDCFrontier.v1.C11044140                   | cicar.C11044140
--- GENE Ca_28103_gene                                           | cicar.Ca_28103_gene
--- EXON auto2622509                                             | exon-auto2622509
--- PROTEIN Ca_00005                                             | cicar.Ca_00005
--- mRNA Ca_00001                                                | cicar.Ca_00001
-UPDATE chromosome  SET primaryidentifier='CDCFrontier.' || substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'cicar.CDCFrontier.%';
-UPDATE supercontig SET primaryidentifier='CDCFrontier.' || substring(secondaryidentifier,7) WHERE primaryidentifier LIKE 'cicar.CDCFrontier.%';
-UPDATE gene        SET primaryidentifier='CDCFrontier.' || substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.Ca_%_gene';
-UPDATE gene        SET primaryidentifier=replace(primaryidentifier, '_gene', '')            WHERE secondaryidentifier LIKE 'cicar.Ca_%_gene';
-UPDATE protein     SET primaryidentifier='CDCFrontier.' || substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.Ca_%';
-UPDATE mrna        SET primaryidentifier='CDCFrontier.' || substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.Ca_%';
+-- CHROMOSOME  cicar.CDCFrontier.gnm1.ann1.Ca4                  | cicar.CDCFrontier.Ca4
+-- SUPERCONTIG cicar.CDCFrontier.gnm1.ann1.C11044140            | cicar.CDCFrontier.C11044140
+-- GENE        cicar.CDCFrontier.gnm1.ann1.Ca_28062             | cicar.CDCFrontier.Ca_28062
+-- EXON        auto2622509                                      | exon-auto2622509
+-- PROTEIN     cicar.CDCFrontier.gnm1.ann1.Ca_12325.1           | cicar.CDCFrontier.Ca_12325.1
+-- mRNA        cicar.ICC4958.v2.0.Ca_01970.1                    | cicar.ICC4958.Ca_01970.1
+UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
+UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
+UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
+UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%;'
+UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- soybean - G. max - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -82,6 +81,8 @@ UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'glyma.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'glyma.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'glyma.%';
+-- replace 'Chr' with 'Gm' for consistency with Soybase
+UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier, 'Chr', 'Gm') WHERE secondaryidentifier LIKE 'glyma.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- medicago - M. truncatula - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -147,7 +148,7 @@ UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigra.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigra.%';
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigra.%';
-UPDATE exon        SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'Vradi%';
+UPDATE exon        SET primaryidentifier=secondaryidentifier              WHERE secondaryidentifier LIKE 'Vradi%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigra.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigra.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -155,14 +156,13 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- CHROMOSOME cajca.ICPL87119.v1.CcLG07                 | cajca.CcLG07
 -- SUPERCONTIG cajca.ICPL87119.v1.Scaffold000002        | cajca.Scaffold000002
--- GENE C.cajan_00001_gene                              | cajca.C.cajan_00001_gene
+-- GENE cajca.ICPL87119.gnm1.ann1.C.cajan_00002         | cajca.C.cajan_00002
 -- EXON auto3025154                                     | exon-auto3025154
 -- PROTEIN C.cajan_00006                                | cajca.C.cajan_00006
 -- mRNA C.cajan_00001                                   | cajca.C.cajan_00001
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
-UPDATE gene        SET primaryidentifier=replace(primaryidentifier, '_gene', '') WHERE secondaryidentifier LIKE 'cajca.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- narrow-leafed lupin - L. angustifolius - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -192,6 +192,14 @@ UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'tripr.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'tripr.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'tripr.%';
+-- shorten the crazy-long names
+UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'Tp57577_TGAC_v2','Tp') WHERE secondaryidentifier LIKE 'tripr.%';
+UPDATE supercontig SET primaryidentifier=replace(primaryidentifier,'Tp57577_TGAC_v2','Tp') WHERE secondaryidentifier LIKE 'tripr.%';
+UPDATE gene        SET primaryidentifier=replace(primaryidentifier,'Tp57577_TGAC_v2','Tp') WHERE secondaryidentifier LIKE 'tripr.%';
+UPDATE exon        SET primaryidentifier=replace(primaryidentifier,'Tp57577_TGAC_v2','Tp') WHERE secondaryidentifier LIKE 'tripr.%';
+UPDATE protein     SET primaryidentifier=replace(primaryidentifier,'Tp57577_TGAC_v2','Tp') WHERE secondaryidentifier LIKE 'tripr.%';
+UPDATE mrna        SET primaryidentifier=replace(primaryidentifier,'Tp57577_TGAC_v2','Tp') WHERE secondaryidentifier LIKE 'tripr.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- adzuki bean - V. angularis - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -201,10 +209,12 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 -- EXON         vigan.Gyeongwon.v3.Vang0002ss00010.1:exon:17064 | vigan.Gyeongwon.v3.Vang0002ss00010.1:exon:17064
 -- PROTEIN      vigan.Gyeongwon.v3.Vang0002ss00040.2            | vigan.Vang0002ss00040.2
 -- mRNA         vigan.Gyeongwon.v3.Vang0002ss00010.1            | vigan.Vang0002ss00010.1
-UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigan.%';
+UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigan.%'; 
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigan.%';
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigan.%';
 UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigan.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigan.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigan.%';
+-- append a Va since just a number is kind of sketchy
+UPDATE chromosome  SET primaryidentifier='Va'||primaryidentifier          WHERE secondaryidentifier LIKE 'vigan.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
