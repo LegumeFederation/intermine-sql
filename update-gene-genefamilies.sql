@@ -5,5 +5,10 @@
 --
 
 CREATE INDEX IF NOT EXISTS homologue__gene__genefamily ON homologue(geneid, genefamilyid);
+CREATE INDEX IF NOT EXISTS homologue__homologue__genefamily ON homologue(homologueid, genefamilyid);
 
-UPDATE gene SET genefamilyid = (SELECT DISTINCT genefamilyid FROM homologue WHERE geneid=gene.id);
+-- everything but Arabidopsis
+--UPDATE gene SET genefamilyid=(SELECT DISTINCT genefamilyid FROM homologue WHERE geneid=gene.id) WHERE primaryidentifier NOT LIKE 'AT%';
+
+-- fix Arabidopsis just in case
+UPDATE gene SET genefamilyid=(SELECT DISTINCT genefamilyid FROM homologue WHERE homologueid=gene.id) WHERE primaryidentifier LIKE 'AT%';

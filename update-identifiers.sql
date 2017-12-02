@@ -36,6 +36,7 @@ UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE transcript  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
+UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'Chr','Pv') WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE qtl         SET primaryidentifier=secondaryidentifier, secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'phavu.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea desi - C. arietinum desi - LIS
@@ -64,7 +65,7 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
-UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%;'
+UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- soybean - G. max - LIS
