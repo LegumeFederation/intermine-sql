@@ -15,4 +15,4 @@ SELECT taxonid,variety,primaryidentifier,secondaryidentifier FROM geneticmarker,
 SELECT taxonid,variety,primaryidentifier,secondaryidentifier FROM geneticmarker,organism WHERE geneticmarker.organismid=organism.id AND taxonid= 130453 AND variety='V14167'       ORDER BY primaryidentifier LIMIT 5;
 SELECT taxonid,variety,primaryidentifier,secondaryidentifier FROM geneticmarker,organism WHERE geneticmarker.organismid=organism.id AND taxonid= 130454 AND variety='K30076'       ORDER BY primaryidentifier LIMIT 5;
 SELECT taxonid,variety,primaryidentifier,secondaryidentifier FROM geneticmarker,organism WHERE geneticmarker.organismid=organism.id AND taxonid= 157791 AND variety='VC1973A'      ORDER BY primaryidentifier LIMIT 5;
-SELECT primaryidentifier,secondaryidentifier FROM geneticmarker WHERE organismid IS NULL ORDER BY primaryidentifier LIMIT 5;
+SELECT 'NULL' AS taxonid,'NULL' as variety,primaryidentifier,secondaryidentifier FROM geneticmarker WHERE organismid IS NULL ORDER BY primaryidentifier LIMIT 5;

@@ -99,6 +99,8 @@ UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'medtr.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'medtr.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'medtr.%';
+-- replace 'chr' with Mt
+UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'chr','Mt') WHERE secondaryidentifier LIKE 'medtr.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- wild peanut duranensis - A. duranensis - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -155,15 +157,17 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- pigeonpea - C. cajan - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
--- CHROMOSOME cajca.ICPL87119.v1.CcLG07                 | cajca.CcLG07
--- SUPERCONTIG cajca.ICPL87119.v1.Scaffold000002        | cajca.Scaffold000002
--- GENE cajca.ICPL87119.gnm1.ann1.C.cajan_00002         | cajca.C.cajan_00002
--- EXON auto3025154                                     | exon-auto3025154
--- PROTEIN C.cajan_00006                                | cajca.C.cajan_00006
--- mRNA C.cajan_00001                                   | cajca.C.cajan_00001
+-- CHROMOSOME  cajca.ICPL87119.v1.CcLG07                 | cajca.CcLG07
+-- SUPERCONTIG cajca.ICPL87119.v1.Scaffold000002         | cajca.Scaffold000002
+-- GENE        cajca.ICPL87119.gnm1.ann1.C.cajan_00002   | cajca.C.cajan_00002
+-- EXON        auto3025154                               | exon-auto3025154
+-- PROTEIN     cajca.ICPL87119.gnm1.ann1.C.cajan_00001.1 | cajca.C.cajan_00001.1
+-- mRNA        cajca.ICPL87119.gnm1.ann1.C.cajan_00001.1 | cajca.C.cajan_00001.1
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
+UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
+UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- narrow-leafed lupin - L. angustifolius - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
