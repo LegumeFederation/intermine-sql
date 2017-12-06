@@ -1,5 +1,7 @@
 --
--- update gene descriptions by running a query against chado.feature loaded into the chado schema
+-- update gene descriptions by running a query against chado.feature and chado.featureprop loaded into the chado schema
+--
+-- NOTE: you must load the chado.chado.feature and chado.chado.featureprop tables into the mine database!
 --
 -- UPDATE type_id APPROPRIATELY!
 --
@@ -19,9 +21,9 @@ UPDATE gene SET description=(
        SELECT chado.featureprop.value
        FROM chado.featureprop,chado.feature
        WHERE chado.featureprop.type_id=2125
-       AND feature.type_id=43076
-       AND chado.featureprop.feature_id=feature.feature_id
-       AND feature.name=gene.secondaryidentifier
+       AND chado.feature.type_id=43076
+       AND chado.featureprop.chado.feature_id=chado.feature.chado.feature_id
+       AND chado.feature.name=gene.secondaryidentifier
        );
 
 \i ../dbmodel/build/model/remove-update-triggers.sql
