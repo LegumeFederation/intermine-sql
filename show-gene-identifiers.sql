@@ -1,5 +1,6 @@
 --
 -- list out the gene identifiers, one per organism. These are the organisms loaded by the chado sequence loader.
+-- NOTE: 3818 common peanut does not have any genes
 --
 SELECT primaryidentifier,secondaryidentifier FROM gene,organism WHERE gene.organismid=organism.id AND taxonid=   3821 AND variety='ICPL87119'    LIMIT 1;
 SELECT primaryidentifier,secondaryidentifier FROM gene,organism WHERE gene.organismid=organism.id AND taxonid=   3827 AND variety='CDCFrontier'  LIMIT 1;

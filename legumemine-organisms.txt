@@ -1,0 +1,19 @@
+--------------------------- LegumeMine -------------------------------------------
+ taxonid |    genus    |    species    |   variety    |        commonname         
+---------+-------------+---------------+--------------+---------------------------
+    3702 | Arabidopsis | thaliana      | Col0         | thale cress
+  130453 | Arachis     | duranensis    | V14167       | diploid duranensis peanut
+    3818 | Arachis     | hypogaea      | Various      | peanut
+  130454 | Arachis     | ipaensis      | K30076       | dipload ipaensis peanut
+    3821 | Cajanus     | cajan         | ICPL87119    | pigeon pea
+    3827 | Cicer       | arietinum     | CDCFrontier  | chickpea (kabuli)
+    3827 | Cicer       | arietinum     | ICC4958      | chickpea (desi)
+    3847 | Glycine     | max           | Williams82   | soybean
+   34305 | Lotus       | japonicus     | MG20         | birdsfoot trefoil
+    3871 | Lupinus     | angustifolius | Tanjil       | lupin
+    3880 | Medicago    | truncatula    | A17          | barrel medic
+    3885 | Phaseolus   | vulgaris      | G19833       | string bean
+   57577 | Trifolium   | pratense      | MilvusB      | red clover
+    3914 | Vigna       | angularis     | Gyeongwon    | adzuki bean
+  157791 | Vigna       | radiata       | VC1973A      | mungbean
+    3920 | Vigna       | unguiculata   | IT97K-499-35 | cowpea

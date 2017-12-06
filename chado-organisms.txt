@@ -1,0 +1,28 @@
+---------------------------------- LIS ---------------------------------------------------
+ organism_id |    genus     |         species          |           common_name            
+-------------+--------------+--------------------------+----------------------------------
+          31 | Apios        | americana_AA-2155        | potato bean
+           6 | Arabidopsis  | thaliana_Col0            | mouse-ear cress
+        1571 | Arachis      | duranensis_V14167        | Arachis duranensis / wild peanut
+          13 | Arachis      | hypogaea_Various         | peanut
+        1572 | Arachis      | ipaensis_K30076          | Arachis ipaensis / wild peanut
+          14 | Cajanus      | cajan_ICPL87119          | pigeonpea
+          15 | Cicer        | arietinum_CDCFrontier    | chickpea
+          33 | Cicer        | arietinum_ICC4958        | chickpea desi
+          16 | Glycine      | max_Williams82           | soybean
+          18 | Lotus        | japonicus_MG20           | birdsfoot trefoil
+          29 | Lupinus      | albus_LAGI01             | white lupin
+          19 | Lupinus      | angustifolius_Tanjil     | narrow-leafed lupin
+          21 | Medicago     | truncatula_A17           | barrel medic
+          24 | Phaseolus    | vulgaris_G19833          | common bean
+          30 | Trifolium    | pratense_MilvusB         | Red clover
+          32 | Vigna        | angularis_Gyeongwon      | adzuki bean
+          26 | Vigna        | radiata_VC1973A          | mungbean
+          27 | Vigna        | unguiculata_IT97K-499-35 | cowpea
+
+------------------------ peanutbase ----------------------------
+ organism_id |  genus  |      species      |    common_name     
+-------------+---------+-------------------+--------------------
+          14 | Arachis | duranensis_V14167 | Arachis duranensis
+          13 | Arachis | hypogaea_Various  | Cultivated peanut
+          15 | Arachis | ipaensis_K30076   | Arachis ipaensis
