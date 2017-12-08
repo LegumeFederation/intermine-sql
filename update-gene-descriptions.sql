@@ -22,7 +22,7 @@ UPDATE gene SET description=(
        FROM chado.featureprop,chado.feature
        WHERE chado.featureprop.type_id=2125
        AND chado.feature.type_id=43076
-       AND chado.featureprop.chado.feature_id=chado.feature.chado.feature_id
+       AND chado.featureprop.feature_id=chado.feature.feature_id
        AND chado.feature.name=gene.secondaryidentifier
        );
 
