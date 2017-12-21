@@ -1,7 +1,7 @@
 --
 -- Add variety suffixes to chado organisms
+-- NOTE: this must be updated when the organism_id values change!
 --
-
 UPDATE organism SET species='arietinum_CDCFrontier' WHERE organism_id=          15;
 UPDATE organism SET species='arietinum_ICC4958'     WHERE organism_id=          33;
 UPDATE organism SET species='max_Williams82'        WHERE organism_id=          16;
@@ -20,3 +20,5 @@ UPDATE organism SET species='radiata_VC1973A'       WHERE organism_id=          
 UPDATE organism SET species='japonicus_MG20'        WHERE organism_id=          18;
 UPDATE organism SET species='unguiculata_IT97K-499-35' WHERE organism_id=	27;
 UPDATE organism SET species='hypogaea_Various'      WHERE organism_id=		13;
+-- this organism is used to import protein domains in SequenceProcessor ONLY
+UPDATE organism SET species='consensus_consensus'   WHERE organism_id=        1570;
