@@ -11,7 +11,8 @@ SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS desc
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'aradu.%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'cajca.%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'tripr.%' ORDER BY primaryidentifier LIMIT 5;
-SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'cicar.%' ORDER BY primaryidentifier LIMIT 5;
+SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'cicar.I%' ORDER BY primaryidentifier LIMIT 5;
+SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'cicar.C%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'glyma.%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'vigun.%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier IS NULL        ORDER BY primaryidentifier LIMIT 5;
