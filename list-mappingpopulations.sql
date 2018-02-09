@@ -1,4 +1,4 @@
 --
 -- list mapping populations to check for dupes
 --
-SELECT * FROM mappingpopulation ORDER BY primaryidentifier;
+SELECT primaryidentifier,geneticmapid,description FROM mappingpopulation ORDER BY primaryidentifier;
