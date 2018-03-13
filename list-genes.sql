@@ -1,5 +1,5 @@
 --
--- list a sample of genes from each organism to check for dupes.
+-- list five genes from each organism to check for dupes.
 --
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'medtr.%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'vigan.%' ORDER BY primaryidentifier LIMIT 5;
@@ -16,3 +16,8 @@ SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS desc
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'glyma.%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier LIKE 'vigun.%' ORDER BY primaryidentifier LIMIT 5;
 SELECT primaryidentifier,secondaryidentifier,substring(description,1,10) AS description,genefamilyid FROM gene WHERE gene.secondaryidentifier IS NULL        ORDER BY primaryidentifier LIMIT 5;
+
+--
+-- now list the counts per organism
+--
+SELECT taxonid,variety,count(*) AS genes FROM gene,organism WHERE gene.organismid=organism.id GROUP BY taxonid,variety ORDER BY taxonid,variety;
