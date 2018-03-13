@@ -19,6 +19,6 @@ UPDATE organism SET species='pratense_MilvusB'      WHERE organism_id=          
 UPDATE organism SET species='radiata_VC1973A'       WHERE organism_id=          26;
 UPDATE organism SET species='japonicus_MG20'        WHERE organism_id=          18;
 UPDATE organism SET species='unguiculata_IT97K-499-35' WHERE organism_id=	27;
-UPDATE organism SET species='hypogaea_Various'      WHERE organism_id=		13;
+UPDATE organism SET species='hypogaea_Reference'    WHERE organism_id=		13;
 -- this organism is used to import protein domains in SequenceProcessor ONLY
 UPDATE organism SET species='consensus_consensus'   WHERE organism_id=        1570;
