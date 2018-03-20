@@ -34,7 +34,7 @@ UPDATE organism SET description='<i>Arabidopsis thaliana</i> is the most widely 
 WHERE taxonid=3702;
 
 UPDATE organism SET description=
-'Cowpea (<i>Vigna unguiculata</i>) is used in many parts of the world for its high-protein seeds, but also for its nutrient-rich edible leaves, forage, and soil enrichment. Cowpea is generally more heat-tolerant than common bean. Cowpeas are one of the most important food legume crops in the semi-arid tropics that cover Asia, Africa, southern Europe and Central and South America. A drought-tolerant and warm-weather crop, cowpeas are well-adapted to the drier regions of the tropics, where other food legumes do not perform as well. It also has the useful ability to fix atmospheric nitrogen through its root nodules, and it grows well in poor soils.'
+'Cowpea (<i>Vigna unguiculata</i>) is used in many parts of the world for its high-protein seeds, but also for its nutrient-rich edible leaves, forage, and soil enrichment. Cowpea is generally more heat-tolerant than common bean. Cowpeas are one of the most important food legume crops in the semi-arid tropics that cover Asia, Africa, southern Europe and Central and South America. A drought-tolerant and warm-weather crop, cowpeas are well-adapted to the drier regions of the tropics, where other food legumes do not perform as well. The serovar IT97K-499-35 provides the reference genome.'
 WHERE taxonid=3917 OR taxonid=3920;
 
 UPDATE organism SET description=
