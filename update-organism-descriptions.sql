@@ -1,6 +1,6 @@
----------------------------------------------------------
--- General purpose organism comment updater for all mines
----------------------------------------------------------
+-------------------------------------------------------------
+-- General purpose organism description updater for all mines
+-------------------------------------------------------------
 
 UPDATE organism SET description=
 'The chickpea (<i>Cicer arietinum</i>) is a legume species in the group of "cool-season" legumes, along with lentil, pea, faba bean and clovers.  Chickpea is one of the earliest cultivated legumes: 7,500-year-old remains have been found in the Middle East.  Other common names for the species include garbanzo bean, ceci bean, sanagalu, chana and Bengal gram. There are two main types of cultivated chickpeas based on seed morphology: desi and kabuli. The kabuli type of chickpea are lighter in color, have a smooth seed coat and about 8 to 9 mm in size. The kabuli type of chickpeas are the most common type found in America. Genome version available on LIS is version CDC Frontier v1.0.'
