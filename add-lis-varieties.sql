@@ -22,3 +22,5 @@ UPDATE organism SET species='unguiculata_IT97K-499-35' WHERE organism_id=	27;
 UPDATE organism SET species='hypogaea_Tifrunner'    WHERE organism_id=		13;
 -- this organism is used to import protein domains in SequenceProcessor ONLY
 UPDATE organism SET species='consensus_consensus'   WHERE organism_id=        1570;
+-- DELETE organisms that do not have varieties appended (since we won't load them)
+DELETE FROM organism WHERE species NOT LIKE '%\_%';
