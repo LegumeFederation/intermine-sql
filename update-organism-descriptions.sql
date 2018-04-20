@@ -64,3 +64,7 @@ WHERE taxonid=34305;
 UPDATE organism SET description=
 'The mungbean (also known as moong bean, green gram) is a fast-growing warm-season legume and has a diploid chromosome number of 2n=22. Mungbean is mainly cultivated today in China, India and Southeast Asia but can be found in dry regions within Southern Europe and United States. Mungbeans are a good source of dietary protein, folate and iron. This legume species was moved from the genus Phaseolus to Vigna and is correctly cited as Vigna radiata.'
 WHERE taxonid=157791;
+
+UPDATE organism SET description=
+'Tifruner (Reg. no. CV-93, PI 644011) is a runner-type peanut (Arachis hypogaea L. subsp. hypogaea var. hypogaea) cultivar that was released by the USDA-ARS and the Georgia Agricultural Experiment Stations in 2005. Tifrunner originated from a cross of F439-16-10-3 and PI 203396. Tifrunner is a runner market-type in seed and pod size. It has a spreading runner growth habit with an erect mainstem that is prominent throughout the growing season and at harvest. It has a high level of resistance to TSWV, and moderate resistance to early (Cercosporidium arachidicola Hori) and late leaf spot. It is a late maturity class peanut, with about 150 d needed for optimal maturity.'
+WHERE variety='Tifrunner';

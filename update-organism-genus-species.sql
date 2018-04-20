@@ -19,4 +19,3 @@ UPDATE organism SET genus='Cajanus', species='cajan', name='Cajanus cajan', comm
 UPDATE organism SET genus='Lupinus', species='angustifolius', name='Lupinus angustifolius', commonname='lupin', shortname='L. angustifolius' WHERE taxonid=3871;
 UPDATE organism SET genus='Lotus', species='japonicus', name='Lotus japonicus', commonname='birdsfoot trefoil', shortname='L. japonicus' WHERE taxonid=34305;
 UPDATE organism SET genus='Vigna', species='radiata', name='Vigna radiata', commonname='mungbean', shortname='V. radiata' WHERE taxonid=157791;
-

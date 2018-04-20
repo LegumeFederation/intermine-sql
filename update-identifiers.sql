@@ -129,6 +129,12 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 -- QTL            arahy.Groundnut bruchid 1-1                   | Groundnut bruchid 1-1
 -- LINKAGE GROUP  TT_AhComposite_QinFeng2012_a-A10(LGJ10)       | TT_AhComposite_QinFeng2012_a-A10(LGJ10)
 -- GENETIC MARKER 14H06                                         | 14H06
+UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'arahy.%';
+UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'arahy.%';
+UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'arahy.%';
+UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'arahy.%';
+UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'arahy.%';
+UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'arahy.%';
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- lotus - L. japonicus - LIS
