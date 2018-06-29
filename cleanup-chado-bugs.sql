@@ -11,5 +11,5 @@ DELETE FROM proteinmatch WHERE proteinid IS NULL;
 DELETE FROM proteinhmmmatch WHERE proteinid IS NULL;
 
 -- The bogus organism consensus consensus is used to load protein domains. We've associated it with taxon ID 3398. Remove it and the references.
-DELETE FROM organism WHERE taxonid=3398;
+DELETE FROM organism WHERE taxonid='3398';
 UPDATE proteindomain SET organismid=NULL;
