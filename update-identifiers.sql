@@ -2,6 +2,8 @@
 -- General purpose updater for LIS chado identifiers
 --
 -- ENABLE TRIGGERS FIRST!!!
+-----------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- cowpea - V. unguiculata - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -19,6 +21,7 @@ UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7)   WHER
 UPDATE protein     SET primaryidentifier=replace(primaryidentifier,'.p','') WHERE secondaryidentifier LIKE 'vigun.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7)   WHERE secondaryidentifier LIKE 'vigun.%';
 UPDATE linkagegroup SET number=substring(primaryidentifier,24)::integer     WHERE primaryidentifier   LIKE 'iSelect%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- common bean - P. vulgaris - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -38,6 +41,7 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE transcript  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'Chr','Pv') WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE qtl         SET primaryidentifier=secondaryidentifier, secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'phavu.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea desi - C. arietinum desi - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -53,6 +57,7 @@ UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.ICC4958.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea kabuli - C. arietinum kabuli - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +72,7 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cicar.CDCFrontier.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- soybean - G. max - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,6 +90,7 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'glyma.%';
 -- replace 'Chr' with 'Gm' for consistency with Soybase
 UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier, 'Chr', 'Gm') WHERE secondaryidentifier LIKE 'glyma.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- medicago - M. truncatula - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -101,6 +108,7 @@ UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'medtr.%';
 -- replace 'chr' with Mt
 UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'chr','Mt') WHERE secondaryidentifier LIKE 'medtr.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- wild peanut duranensis - A. duranensis - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -112,6 +120,7 @@ UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'chr','Mt') W
 -- mRNA         Aradu.000JC.1                                   | aradu.Aradu.000JC.1
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'aradu.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'aradu.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- wild peanut ipaensis - A. ipaensis - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -123,6 +132,7 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 -- mRNA         Araip.000WR.1                                   | araip.Araip.000WR.1
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'araip.%';
 UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'araip.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- cultivated peanut - A. hypogaea - PeanutBase
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -136,6 +146,7 @@ UPDATE exon        SET primaryidentifier=secondaryidentifier WHERE secondaryiden
 UPDATE protein     SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE mrna        SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'arahy.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- lotus - L. japonicus - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -145,6 +156,7 @@ UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primary
 -- PROTEIN      Lj0g3v0000089.2                                 | lotja.Lj0g3v0000089.2
 -- mRNA         Lj0g3v0000029.1                                 | lotja.Lj0g3v0000029.1
 UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'lotja.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- mungbean - V. radiata - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -160,6 +172,7 @@ UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE exon        SET primaryidentifier=secondaryidentifier              WHERE secondaryidentifier LIKE 'Vradi%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigra.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'vigra.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- pigeonpea - C. cajan - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -174,6 +187,7 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'cajca.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- narrow-leafed lupin - L. angustifolius - LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -188,6 +202,7 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE gene        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'lupan.%';
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'lupan.%';
 UPDATE mRNA        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'lupan.%';
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- red clover - T. pratense -- LIS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
