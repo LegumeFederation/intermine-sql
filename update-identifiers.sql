@@ -39,8 +39,8 @@ UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE transcript  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
+UPDATE qtl         SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'Chr','Pv') WHERE secondaryidentifier LIKE 'phavu.%';
-UPDATE qtl         SET primaryidentifier=secondaryidentifier, secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'phavu.%';
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- chickpea desi - C. arietinum desi - LIS
@@ -136,16 +136,22 @@ UPDATE supercontig SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- cultivated peanut - A. hypogaea - PeanutBase
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- CHROMOSOME	  arahy.Tifrunner.gnm1.Arahy.11			| arahy.Arahy.11
+-- SUPERCONTIG	  arahy.Tifrunner.gnm1.scaffold_139 		| arahy.scaffold_139
+-- GENE		  arahy.Tifrunner.gnm1.ann1.GHMM2H		| arahy.GHMM2H
+-- EXON		  arahy.Tifrunner.gnm1.ann1.2E0FT9.1:cds-11187741 | arahy.Tifrunner.gnm1.ann1.2E0FT9.1:cds
+-- PROTEIN	  arahy.Tifrunner.gnm1.ann1.ZE2WHA.4  		| arahy.ZE2WHA.4
+-- MRNA	  	  arahy.Tifrunner.gnm1.ann1.ZE2WHA.4  		| arahy.ZE2WHA.4
 -- QTL            arahy.Groundnut bruchid 1-1                   | Groundnut bruchid 1-1
 -- LINKAGE GROUP  TT_AhComposite_QinFeng2012_a-A10(LGJ10)       | TT_AhComposite_QinFeng2012_a-A10(LGJ10)
 -- GENETIC MARKER 14H06                                         | 14H06
-UPDATE chromosome  SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
+UPDATE chromosome  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE supercontig SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE gene        SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE exon        SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE protein     SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE mrna        SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
-UPDATE qtl SET primaryidentifier=secondaryidentifier,secondaryidentifier=primaryidentifier WHERE primaryidentifier LIKE 'arahy.%';
+UPDATE qtl SET primaryidentifier=secondaryidentifier	     WHERE primaryidentifier LIKE 'arahy.%';
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- lotus - L. japonicus - LIS

@@ -68,3 +68,8 @@ WHERE taxonid='157791';
 UPDATE organism SET description=
 'Tifruner (Reg. no. CV-93, PI 644011) is a runner-type peanut (Arachis hypogaea L. subsp. hypogaea var. hypogaea) cultivar that was released by the USDA-ARS and the Georgia Agricultural Experiment Stations in 2005. Tifrunner originated from a cross of F439-16-10-3 and PI 203396. Tifrunner is a runner market-type in seed and pod size. It has a spreading runner growth habit with an erect mainstem that is prominent throughout the growing season and at harvest. It has a high level of resistance to TSWV, and moderate resistance to early (Cercosporidium arachidicola Hori) and late leaf spot. It is a late maturity class peanut, with about 150 d needed for optimal maturity.'
 WHERE variety='Tifrunner';
+
+UPDATE organism SET description=
+'The USDA Soybean Germplasm Collection housed at the University of Illinois is one of 30 germplasm repositories that are part of the National Plant Germplasm System. There are five major divisions within our collection: North American varieties (1,400 private and publicly developed varieties), introduced soybeans (17,500 accessions from 90 countries), wild soybeans (1,100 accessions from 6 countries), wild perennial Glycine species (19 species, 1,200 accessions), and research lines (1,100 accessions).'
+WHERE variety='USGermplasmCollection';
+
