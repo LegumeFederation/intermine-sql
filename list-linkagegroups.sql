@@ -1,4 +1,4 @@
 --
--- yet another list
+-- linkage groups
 --
-SELECT primaryidentifier,secondaryidentifier,"number",geneticmapid,organismid FROM linkagegroup ORDER BY primaryidentifier,secondaryidentifier;
+SELECT primaryidentifier,secondaryidentifier,"number",geneticmapid FROM linkagegroup ORDER BY primaryidentifier,secondaryidentifier;

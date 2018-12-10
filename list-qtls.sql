@@ -1,4 +1,4 @@
 --
--- list out the qtls to check for dupes
+-- list out the QTL counts
 --
-SELECT organismid,primaryidentifier,secondaryidentifier,traitname FROM qtl ORDER BY primaryidentifier,organismid;
+SELECT traitname,primaryidentifier,secondaryidentifier FROM qtl ORDER BY traitname,primaryidentifier,secondaryidentifier;

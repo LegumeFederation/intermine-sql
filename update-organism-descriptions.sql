@@ -1,14 +1,10 @@
--------------------------------------------------------------
--- General purpose organism description updater for all mines
--------------------------------------------------------------
+-----------------------------------------------
+-- General purpose organism description updater
+-----------------------------------------------
 
 UPDATE organism SET description=
-'The chickpea (Cicer arietinum) is a legume species in the group of "cool-season" legumes, along with lentil, pea, faba bean and clovers.  Chickpea is one of the earliest cultivated legumes: 7,500-year-old remains have been found in the Middle East.  Other common names for the species include garbanzo bean, ceci bean, sanagalu, chana and Bengal gram. There are two main types of cultivated chickpeas based on seed morphology: desi and kabuli. The kabuli type of chickpea are lighter in color, have a smooth seed coat and about 8 to 9 mm in size. The kabuli type of chickpeas are the most common type found in America. Genome version available on LIS is version CDC Frontier v1.0.'
-WHERE variety='CDCFrontier';
-
-UPDATE organism SET description=
-'The chickpea (Cicer arietinum) is a legume species in the group of "cool-season" legumes, along with lentil, pea, faba bean and clovers.  Chickpea is one of the earliest cultivated legumes: 7,500-year-old remains have been found in the Middle East.  Other common names for the species include garbanzo bean, ceci bean, sanagalu, chana and Bengal gram. There are two main types of cultivated chickpeas based on seed morphology: desi and kabuli. The desi type of chickpea consists of seeds with a yellow interior but have a thick, wrinkled and dark seed coat, the seeds are approximately 6 to 7 mm in size. The majority of desi chickpeas are split in half to make Chana Dahl. ICC 4958, desi type chickpea; genome version available on LIS is version ICC 4958 v2.0.'
-WHERE variety='ICC4958';
+'The chickpea (Cicer arietinum) is a legume species in the group of "cool-season" legumes, along with lentil, pea, faba bean and clovers.  Chickpea is one of the earliest cultivated legumes: 7,500-year-old remains have been found in the Middle East.  Other common names for the species include garbanzo bean, ceci bean, sanagalu, chana and Bengal gram. There are two main types of cultivated chickpeas based on seed morphology: desi and kabuli. The desi type of chickpea consists of seeds with a yellow interior but have a thick, wrinkled and dark seed coat, the seeds are approximately 6 to 7 mm in size. The majority of desi chickpeas are split in half to make Chana Dahl. The kabuli type of chickpea are lighter in color, have a smooth seed coat and about 8 to 9 mm in size. The kabuli type of chickpeas are the most common type found in America.'
+WHERE taxonid='3827';
 
 UPDATE organism SET description=
 'Common bean''s center of origin is Central America, and it was likely domesticated there as well as in the Andes. Beans were also carried into North America and were grown by Native Americans there for many centuries. They were carried to Europe by early explorers of the New World, and have undergone about 500 years of additional domestication and selection in Europe. The species has great agricultural variety, and is of critical importance as a high-protein food across the world. Common bean is closely related to several other domesticated crop species in the group of "warm-season legumes". Other domesticated species in the Phaseolus genus include lima bean (P. lunatus), tepary bean (P. acutifolius), and runner bean (P. coccineus). Species in the similar Vigna genus include cowpea (V. unguiculata), adzuki bean (V. angularis), moth bean (V. aconitifolia), black gram (V. mungo), mung bean (V. radiata), ricebean (V. umbellata), and Bambara groundnut (V. subterranea). Other more distantly related warm-season legumes include soybean, jicama, pigeonpea, African yam bean, hyacinth bean, and Apios americana ("potato bean").'
@@ -64,12 +60,4 @@ WHERE taxonid='34305';
 UPDATE organism SET description=
 'The mungbean (also known as moong bean, green gram) is a fast-growing warm-season legume and has a diploid chromosome number of 2n=22. Mungbean is mainly cultivated today in China, India and Southeast Asia but can be found in dry regions within Southern Europe and United States. Mungbeans are a good source of dietary protein, folate and iron. This legume species was moved from the genus Phaseolus to Vigna and is correctly cited as Vigna radiata.'
 WHERE taxonid='157791';
-
-UPDATE organism SET description=
-'Tifruner (Reg. no. CV-93, PI 644011) is a runner-type peanut (Arachis hypogaea L. subsp. hypogaea var. hypogaea) cultivar that was released by the USDA-ARS and the Georgia Agricultural Experiment Stations in 2005. Tifrunner originated from a cross of F439-16-10-3 and PI 203396. Tifrunner is a runner market-type in seed and pod size. It has a spreading runner growth habit with an erect mainstem that is prominent throughout the growing season and at harvest. It has a high level of resistance to TSWV, and moderate resistance to early (Cercosporidium arachidicola Hori) and late leaf spot. It is a late maturity class peanut, with about 150 d needed for optimal maturity.'
-WHERE variety='Tifrunner';
-
-UPDATE organism SET description=
-'The USDA Soybean Germplasm Collection housed at the University of Illinois is one of 30 germplasm repositories that are part of the National Plant Germplasm System. There are five major divisions within our collection: North American varieties (1,400 private and publicly developed varieties), introduced soybeans (17,500 accessions from 90 countries), wild soybeans (1,100 accessions from 6 countries), wild perennial Glycine species (19 species, 1,200 accessions), and research lines (1,100 accessions).'
-WHERE variety='USGermplasmCollection';
 
