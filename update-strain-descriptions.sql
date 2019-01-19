@@ -106,11 +106,26 @@ UPDATE strain SET name='CDC Frontier', description=
 'CDC Frontier, a kabuli chickpea (Cicer arietinum L.) cultivar, was released in 2003 by the Crop Development Centre, University of Saskatchewan, for distribution to Select seed growers in western Canada through the Variety Release Program of the Saskatchewan Pulse Growers. CDC Frontier has a pinnate leaf type, fair ascochyta blight [Ascochyta rabiei (Pass.) Labr.] resistance, medium maturity, medium-large seed size and high yield potential in the Brown and Dark Brown soil zones of the Canadian prairies.'
 WHERE primaryidentifier='CDCFrontier';
 
+UPDATE strain SET name='A17', description=
+'Medicago truncatula (Barrel Medic) is a small annual legume native to the Mediterranean region. As other legumes, it forms symbioses with nitrogen-fixing rhizobia and arbuscular mycorrhizal fungi. This species has been chosen as a model organism for legume biology because it has a small diploid genome, is self-fertile, has a rapid generation time and prolific seed production, and is amenable to genetic transformation. The nuclear genome has 8 chromosomes. Medicago truncatula cultivar A17 was sequenced and assembled by the Medicago truncatula Sequencing Consortium in 2011.'
+WHERE primaryidentifier='A17';
 
--- MG20
--- Gyeongwon
--- VC1973A
--- A17
--- MilvusB
--- Tanjil
+UPDATE strain SET name='Miyakojima MG-20', description=
+'Although Lotus japonicus is a long-day plant, plants of the MG-20 accession set many flowers and pods even under short-day conditions (day length is approximately 11 h). This is the main feature of the plants of this accession, which has provided the reference genome for the species.'
+WHERE primaryidentifier='MG20';
+
+UPDATE strain SET name='Gyeongwon', description=
+'Vigna angularis var. angularis has a diploid genome. The selected domesticated line for sequencing was chosen to be Gyeongwon, a widely grown variety in Korea, which was developed by the Rural Development Administration (RDA) in Korea to reduce root lodging and to improve grain quality.'
+WHERE primaryidentifier='Gyeongwon';
+
+UPDATE strain SET name='Milvus B', description='Red clover (Trifolium pratense) is one of the most important forage legume crops in temperate agriculture, and a key component of sustainable intensification of livestock farming systems. Red clover is a highly heterozygous diploid (2n = 2x = 14) species due to its gametophytic self-incompatibility system. The chromosome-scale reference draft genome for red clover was assembled for the variety Milvus B.'
+WHERE primaryidentifier='MilvusB';
+
+UPDATE strain SET name='Tanjil', description=
+'Tanjil is an Anthracnose-resistant narrow-leafed lupin variety developed by Agriculture Western Australia with the Australian Coordinated Lupin Improvement Program (ACLIP). The variety is especially high-yielding in the higher-rainfall northern wheatbelt of Western Austrailia where Anthracnose is a major threat.'
+WHERE primaryidentifier='Tanjil';
+
+UPDATE strain SET name='VC1973A', description=
+'The pure mung bean line VC1973 A was chosen for genome sequencing. VC1973A was developed at the AVRDC-The World Vegetable Center in 1982; since then, it has been widely grown in Korea, Thailand, Taiwan, Canada and China as a heteronymous cultivar called ‘Seonhwanogdu’ in Korea, ‘Kamphaeng Saen 1’ in Thailand and ‘Zhong Lu’ in China.'
+WHERE primaryidentifier='VC1973A';
 
