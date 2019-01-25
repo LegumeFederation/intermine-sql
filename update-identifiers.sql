@@ -39,7 +39,7 @@ UPDATE exon        SET primaryidentifier=substring(secondaryidentifier,7) WHERE 
 UPDATE protein     SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE mrna        SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
 UPDATE transcript  SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
-UPDATE qtl         SET primaryidentifier=substring(secondaryidentifier,7) WHERE secondaryidentifier LIKE 'phavu.%';
+UPDATE qtl         SET primaryidentifier=secondaryidentifier              WHERE primaryidentifier   LIKE 'phavu.%';
 UPDATE chromosome  SET primaryidentifier=replace(primaryidentifier,'Chr','Pv') WHERE secondaryidentifier LIKE 'phavu.%';
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -151,7 +151,7 @@ UPDATE gene        SET primaryidentifier=secondaryidentifier WHERE secondaryiden
 UPDATE exon        SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE protein     SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
 UPDATE mrna        SET primaryidentifier=secondaryidentifier WHERE secondaryidentifier LIKE 'arahy.%';
-UPDATE qtl SET primaryidentifier=secondaryidentifier	     WHERE primaryidentifier LIKE 'arahy.%';
+UPDATE qtl         SET primaryidentifier=secondaryidentifier WHERE primaryidentifier   LIKE 'arahy.%';
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- lotus - L. japonicus - LIS
